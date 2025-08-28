@@ -29,6 +29,19 @@ $(document).ready(function() {
 
     });
 
+    // Tab functionality
+    $('.tab').click(function() {
+        var tabId = $(this).data('tab');
+        
+        // Remove active class from all tabs and tab panes
+        $('.tab').removeClass('is-active');
+        $('.tab-pane').removeClass('is-active');
+        
+        // Add active class to clicked tab and corresponding pane
+        $(this).addClass('is-active');
+        $('#' + tabId).addClass('is-active');
+    });
+
     var options = {
 			slidesToScroll: 1,
 			slidesToShow: 3,
